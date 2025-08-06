@@ -1,9 +1,9 @@
-import type { BaseColor, TokenColor, UIColor } from './vscode/src/type'
+import type { BaseColor, TokenColor, UIColor } from '../vscode/src/type'
 
-import { buildTerminalColor } from './vscode/src/terminal'
-import { getSchemeTextColor, parseColor } from './vscode/src/util'
-import { colors, type Colors } from './vscode/src/colors'
-import { name, author, description, displayName, repository as repo, version } from './package.json'
+import { buildTerminalColor } from '../vscode/src/terminal'
+import { getSchemeTextColor, parseColor } from '../vscode/src/util'
+import { colors, type Colors } from '../vscode/src/colors'
+import { name, author, description, displayName, repository as repo, version } from '../package.json'
 import { writeFileSync } from 'node:fs'
 import type { HighlightStyleContent, ThemeFamilyContent, ThemeStyleContent } from './type'
 import type { Prettify } from "@subframe7536/type-utils";

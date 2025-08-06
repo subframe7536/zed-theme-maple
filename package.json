@@ -15,8 +15,8 @@
   },
   "private": true,
   "scripts": {
-    "build": "bun index.ts",
-    "dev": "bun --hot index.ts",
+    "build": "bun src/index.ts",
+    "dev": "bun --hot src/index.ts",
     "update": "bun run update.ts",
     "postinstall": "bun run update"
   },
