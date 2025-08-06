@@ -5,13 +5,13 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-type AppearanceContent = "light" | "dark";
-type AccentContent = string | null;
+export type AppearanceContent = "light" | "dark";
+export type AccentContent = string | null;
 /**
  * The background appearance of the window.
  */
-type WindowBackgroundContent = "opaque" | "transparent" | "blurred";
-type FontStyleContent = "normal" | "italic" | "oblique";
+export type WindowBackgroundContent = "opaque" | "transparent" | "blurred";
+export type FontStyleContent = "normal" | "italic" | "oblique";
 
 /**
  * The content of a serialized theme family.

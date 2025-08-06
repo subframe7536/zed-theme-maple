@@ -5,8 +5,43 @@ import { getSchemeTextColor, parseColor } from './vscode/src/util'
 import { colors, type Colors } from './vscode/src/colors'
 import { name, author, description, displayName, repository as repo, version } from './package.json'
 import { writeFileSync } from 'node:fs'
+import type { HighlightStyleContent, ThemeFamilyContent, ThemeStyleContent } from './type'
+import type { Prettify } from "@subframe7536/type-utils";
 
-function buildUI(themeDev: any) {
+// 将 T 中所有以 K 为前缀的键值重新映射到子对象
+type _GatherByPrefix<T, K extends string> = {
+  [P in keyof T as P extends `${K}.${infer Tail}` ? Tail : never]: T[P];
+};
+
+// 判断 T 中是否存在直接字段 K（无 '.' 的 K）
+type _HasDirectKey<T, K extends string> = K extends keyof T ? true : false;
+
+// 判断 T 中是否存在以 K. 开头的字段
+type _HasNestedKey<T, K> = K extends string ? Extract<keyof T, `${K}.${string}`> extends never ? false : true : never;
+
+// 主实现
+type ExpandDotKeys<T extends object> = {
+    [K in TopLevelKeys<keyof T> & string]?: _HasDirectKey<T, K> extends true
+    ? _HasNestedKey<T, K> extends true
+    ? // 冲突：同时存在 a 和 a.b，将 a 的值放进 DEFAULT
+    Prettify<
+      ExpandDotKeys<_GatherByPrefix<T, K>> & { DEFAULT?: T[K & keyof T] }
+    >
+    : // 只有 a，没有 a.*，保持原值
+    T[K & keyof T]
+    : // 只有 a.*，没有 a，继续展开
+    ExpandDotKeys<_GatherByPrefix<T, K>>;
+  }
+
+// 取出所有顶层键名（'a.b' -> 'a'）
+type TopLevelKeys<K> = K extends `${infer Head}.${string}` ? Head : K;
+type RemoveStringIndex<T> = {
+  [K in keyof T as string extends K ? never : K]: T[K];
+};
+
+type UI = Omit<ExpandDotKeys<RemoveStringIndex<ThemeStyleContent>>, 'syntax'>
+
+function buildUI(themeDev: UI) {
   const theme: Record<string, any> = {}
 
   function flatten(obj: any, prefix = '') {
@@ -37,8 +72,8 @@ interface SyntaxConfig {
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 }
 
-function buildSyntax(obj: Record<string, string | SyntaxConfig>) {
-  const result: Record<string, unknown> = {}
+function buildSyntax(obj: Record<string, string | SyntaxConfig>): Record<string, HighlightStyleContent> {
+  const result: Record<string, HighlightStyleContent> = {}
   for (const [k, v] of Object.entries(obj)) {
     if (typeof v === 'string') {
       result[k] = { color: v }
@@ -62,17 +97,13 @@ function buildZedTheme(
 ) {
   return {
     ...buildUI({
-      background: ui.background,
+      background: {
+        DEFAULT: ui.background
+      },
       editor: {
         foreground: ui.foreground,
         background: ui.backgroundEditor,
         gutter: {
-          background: ui.background,
-        },
-        toolbar: {
-          background: ui.backgroundEditorAlt,
-        },
-        status_bar: {
           background: ui.background,
         },
         document_highlight: {
@@ -87,6 +118,12 @@ function buildZedTheme(
           background: parseColor(ui.selection, 0.5),
         },
       },
+      status_bar: {
+        background: ui.background,
+      },
+      toolbar: {
+        background: ui.backgroundEditorAlt,
+      },
       terminal: {
         background: ui.backgroundEditor,
         foreground: ui.foreground,
@@ -95,18 +132,28 @@ function buildZedTheme(
           isDark,
           (type, isBright) => isBright ? `bright_${type}` : type,
         ),
-        version_control: {
-          added: base.green,
-          deleted: base.red,
-          modified: base.blue,
-          conflict: base.cyan,
-          renamed: base.purple,
-          ignored: base.gray,
-        },
+      },
+      created: {
+        DEFAULT: base.green
+      },
+      deleted: {
+        DEFAULT: base.red
+      },
+      modified: {
+        DEFAULT: base.blue
+      },
+      conflict: {
+        DEFAULT: base.cyan
+      },
+      renamed: {
+        DEFAULT: base.purple
+      },
+      ignored: {
+        DEFAULT: base.gray
       },
       border: {
         DEFAULT: ui.borderNormal,
-        focus: ui.borderActive,
+        focused: ui.borderActive,
       },
       warning: {
         background: ui.backgroundEditorAlt,
@@ -160,10 +207,10 @@ function buildZedTheme(
 
 
 function main(colorConfig: Record<string, Colors>) {
-  const themeJson = {
+  const themeJson: ThemeFamilyContent = {
     name: 'Maple Theme',
     author,
-    themes: [] as object[],
+    themes: [],
   }
   for (const [name, color] of Object.entries(colorConfig)) {
     const { baseColor, isDark, tokenColor, uiColor } = color
