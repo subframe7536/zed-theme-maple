@@ -17,7 +17,7 @@ export function buildTheme(
       text: {
         DEFAULT: ui.foreground,
         accent: ui.secondary,
-        muted: parseColor(ui.foreground, 0.7)
+        muted: parseColor(ui.foreground, 0.9),
       },
       hint: {
         DEFAULT: ui.secondary
@@ -94,7 +94,6 @@ export function buildTheme(
       panel: {
         background: ui.background,
       },
-
       link_text: {
         hover: ui.backgroundEditorAlt
       },
@@ -142,7 +141,7 @@ export function buildTheme(
       },
       comment: token.comment,
       constant: token.constant,
-      constructor: token.keyword.alt,
+      constructor: token.class.normal,
       embedded: token.constant,
       emphasis: {
         color: token.link,
@@ -170,7 +169,7 @@ export function buildTheme(
         color: token.type.normal,
         fontWeight: 700,
       },
-      variable: token.variable.local,
+      variable: parseColor(token.variable.local, 0.9),
     }),
   };
 }
