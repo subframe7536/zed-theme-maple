@@ -1,0 +1,29 @@
+{
+  "name": "theme-maple",
+  "author": "subframe7536",
+  "displayName": "Maple Theme",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "A colorful Zed theme, support light or dark mode, with medium brightness and low saturation.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subframe7536/zed-theme-maple"
+  },
+  "bugs": {
+    "url": "https://github.com/subframe7536/zed-theme-maple/issues"
+  },
+  "private": true,
+  "scripts": {
+    "build": "bun index.ts",
+    "dev": "bun --hot index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/tinycolor2": "^1.4.6",
+    "tinycolor2": "^1.6.0"
+  },
+  "peerDependencies": {
+    "typescript": "~5.8"
+  }
+}

@@ -1,0 +1,3 @@
+[submodule "vscode"]
+	path = vscode
+	url = https://github.com/subframe7536/vscode-theme-maple.git
