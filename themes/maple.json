@@ -9,7 +9,7 @@
         "background": "#171718",
         "text": "#cbd5e1",
         "text.accent": "#8dbe74",
-        "text.muted": "#cbd5e1b3",
+        "text.muted": "#cbd5e1e6",
         "hint": "#8dbe74",
         "elevated_surface.background": "#171718",
         "editor.foreground": "#cbd5e1",
@@ -91,7 +91,7 @@
             "color": "#f0c0a8"
           },
           "constructor": {
-            "color": "#e3cbeb"
+            "color": "#f0c0a8"
           },
           "embedded": {
             "color": "#f0c0a8"
@@ -151,7 +151,7 @@
             "font_weight": 700
           },
           "variable": {
-            "color": "#eecfa0"
+            "color": "#eecfa0e6"
           }
         }
       }
@@ -163,7 +163,7 @@
         "background": "#fafaf9",
         "text": "#475569",
         "text.accent": "#85987c",
-        "text.muted": "#475569b3",
+        "text.muted": "#475569e6",
         "hint": "#85987c",
         "elevated_surface.background": "#fafaf9",
         "editor.foreground": "#475569",
@@ -245,7 +245,7 @@
             "color": "#c37522"
           },
           "constructor": {
-            "color": "#a65973"
+            "color": "#c37522"
           },
           "embedded": {
             "color": "#c37522"
@@ -305,7 +305,7 @@
             "font_weight": 700
           },
           "variable": {
-            "color": "#aa830e"
+            "color": "#aa830ee6"
           }
         }
       }
