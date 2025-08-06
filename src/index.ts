@@ -100,6 +100,17 @@ function buildZedTheme(
       background: {
         DEFAULT: ui.background
       },
+      text: {
+        DEFAULT: ui.foreground,
+        accent: ui.secondary,
+        muted: parseColor(ui.foreground, 0.7)
+      },
+      hint: {
+        DEFAULT: ui.secondary
+      },
+      elevated_surface: {
+        background: ui.background
+      },
       editor: {
         foreground: ui.foreground,
         background: ui.backgroundEditor,
@@ -122,7 +133,17 @@ function buildZedTheme(
         background: ui.background,
       },
       toolbar: {
-        background: ui.backgroundEditorAlt,
+        background: parseColor(ui.backgroundEditorAlt, 0.5),
+      },
+      element: {
+        hover: parseColor(ui.listItem, 0.6),
+        active: parseColor(ui.listItem, 0.8),
+        selected: ui.listItem,
+      },
+      ghost_element: {
+        hover: parseColor(ui.listItem, 0.6),
+        active: parseColor(ui.listItem, 0.8),
+        selected: ui.listItem
       },
       terminal: {
         background: ui.backgroundEditor,
@@ -134,30 +155,62 @@ function buildZedTheme(
         ),
       },
       created: {
-        DEFAULT: base.green
+        DEFAULT: token.diff.inserted,
       },
       deleted: {
-        DEFAULT: base.red
+        DEFAULT: token.diff.deleted
       },
       modified: {
-        DEFAULT: base.blue
+        DEFAULT: token.diff.changed
       },
       conflict: {
-        DEFAULT: base.cyan
+        DEFAULT: base.purple
       },
       renamed: {
-        DEFAULT: base.purple
+        DEFAULT: base.cyan
       },
       ignored: {
         DEFAULT: base.gray
       },
       border: {
         DEFAULT: ui.borderNormal,
-        focused: ui.borderActive,
+        focused: parseColor(ui.borderActive, 0.8),
+        selected: ui.borderActive,
+      },
+      panel: {
+        background: ui.background,
+      },
+
+      link_text: {
+        hover: ui.backgroundEditorAlt
+      },
+      scrollbar: {
+        thumb: {
+          background: parseColor(ui.scrollbar, isDark ? 0.5 : 0.3),
+          hover_background: parseColor(ui.scrollbar, isDark ? 0.8 : 0.6),
+        }
+      },
+      hidden: {
+        background: ui.backgroundEditorAlt
+      },
+      success: {
+        DEFAULT: base.green,
+        background: parseColor(base.green, 0.3),
+      },
+      info: {
+        DEFAULT: base.blue,
+        background: parseColor(base.blue, 0.3),
+      },
+      error: {
+        DEFAULT: base.red,
+        background: parseColor(base.red, 0.3),
       },
       warning: {
-        background: ui.backgroundEditorAlt,
-        border: ui.borderNormal,
+        DEFAULT: base.yellow,
+        background: parseColor(base.yellow, 0.3)
+      },
+      unreachable: {
+        DEFAULT: base.gray,
       },
       players: [
         {
@@ -189,12 +242,15 @@ function buildZedTheme(
         fontStyle: 'italic',
       },
       label: token.function,
+      namespace: token.namespace,
       number: token.number,
       operator: token.operator,
       primary: token.builtin,
       property: token.property.normal,
       punctuation: token.punctuation,
       string: token.string,
+      selector: token.property.normal,
+      'selector.pseudo': token.css.pseudo,
       tag: token.htmlTag,
       type: {
         color: token.type.normal,

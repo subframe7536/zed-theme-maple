@@ -7,16 +7,27 @@
       "name": "Maple Dark",
       "style": {
         "background": "#171718",
+        "text": "#cbd5e1",
+        "text.accent": "#8dbe74",
+        "text.muted": "#cbd5e1b3",
+        "hint": "#8dbe74",
+        "elevated_surface.background": "#171718",
         "editor.foreground": "#cbd5e1",
         "editor.background": "#1e1e1f",
         "editor.gutter.background": "#171718",
-        "editor.toolbar.background": "#232a39",
-        "editor.status_bar.background": "#171718",
         "editor.document_highlight.bracket_background": "#8d9db480",
         "editor.active_line.background": "#47556940",
         "editor.active_line_number": "#fafafa",
         "editor.line_number": "#999999b3",
         "editor.highlighted_line.background": "#47556980",
+        "status_bar.background": "#171718",
+        "toolbar.background": "#232a3980",
+        "element.hover": "#33415599",
+        "element.active": "#334155cc",
+        "element.selected": "#334155",
+        "ghost_element.hover": "#33415599",
+        "ghost_element.active": "#334155cc",
+        "ghost_element.selected": "#334155",
         "terminal.background": "#1e1e1f",
         "terminal.foreground": "#cbd5e1",
         "terminal.ansi.bright_black": "#666666",
@@ -35,16 +46,29 @@
         "terminal.ansi.red": "#edabab",
         "terminal.ansi.white": "#f3f2f2",
         "terminal.ansi.yellow": "#eecfa0",
-        "terminal.version_control.added": "#a4dfae",
-        "terminal.version_control.deleted": "#edabab",
-        "terminal.version_control.modified": "#8fc7ff",
-        "terminal.version_control.conflict": "#a1e8e5",
-        "terminal.version_control.renamed": "#d2ccff",
-        "terminal.version_control.ignored": "#999999",
+        "created": "#a4dfae",
+        "deleted": "#edabab",
+        "modified": "#eecfa0",
+        "conflict": "#d2ccff",
+        "renamed": "#a1e8e5",
+        "ignored": "#999999",
         "border": "#44444b",
-        "border.focus": "#64748b",
-        "warning.background": "#232a39",
-        "warning.border": "#44444b",
+        "border.focused": "#64748bcc",
+        "border.selected": "#64748b",
+        "panel.background": "#171718",
+        "link_text.hover": "#232a39",
+        "scrollbar.thumb.background": "#3d4b5f80",
+        "scrollbar.thumb.hover_background": "#3d4b5fcc",
+        "hidden.background": "#232a39",
+        "success": "#a4dfae",
+        "success.background": "#a4dfae4d",
+        "info": "#8fc7ff",
+        "info.background": "#8fc7ff4d",
+        "error": "#edabab",
+        "error.background": "#edabab4d",
+        "warning": "#eecfa0",
+        "warning.background": "#eecfa04d",
+        "unreachable": "#999999",
         "players": [
           {
             "cursor": "#8d9db4",
@@ -92,6 +116,9 @@
           "label": {
             "color": "#8fc7ff"
           },
+          "namespace": {
+            "color": "#e3cbeb"
+          },
           "number": {
             "color": "#d5f288"
           },
@@ -109,6 +136,12 @@
           },
           "string": {
             "color": "#a4dfae"
+          },
+          "selector": {
+            "color": "#ded6cf"
+          },
+          "selector.pseudo": {
+            "color": "#8fc7ff"
           },
           "tag": {
             "color": "#edabab"
@@ -128,16 +161,27 @@
       "name": "Maple Light",
       "style": {
         "background": "#fafaf9",
+        "text": "#475569",
+        "text.accent": "#85987c",
+        "text.muted": "#475569b3",
+        "hint": "#85987c",
+        "elevated_surface.background": "#fafaf9",
         "editor.foreground": "#475569",
         "editor.background": "#fffffe",
         "editor.gutter.background": "#fafaf9",
-        "editor.toolbar.background": "#ffffff",
-        "editor.status_bar.background": "#fafaf9",
         "editor.document_highlight.bracket_background": "#6e7e954d",
         "editor.active_line.background": "#dee4d840",
         "editor.active_line_number": "#1d1d1d",
         "editor.line_number": "#808080b3",
         "editor.highlighted_line.background": "#dee4d880",
+        "status_bar.background": "#fafaf9",
+        "toolbar.background": "#ffffff80",
+        "element.hover": "#e1e7db99",
+        "element.active": "#e1e7dbcc",
+        "element.selected": "#e1e7db",
+        "ghost_element.hover": "#e1e7db99",
+        "ghost_element.active": "#e1e7dbcc",
+        "ghost_element.selected": "#e1e7db",
         "terminal.background": "#fffffe",
         "terminal.foreground": "#475569",
         "terminal.ansi.bright_black": "#666666",
@@ -156,16 +200,29 @@
         "terminal.ansi.red": "#bd5151",
         "terminal.ansi.white": "#f3f2f2",
         "terminal.ansi.yellow": "#b26b1f",
-        "terminal.version_control.added": "#478f14",
-        "terminal.version_control.deleted": "#bd5151",
-        "terminal.version_control.modified": "#0585a8",
-        "terminal.version_control.conflict": "#127d52",
-        "terminal.version_control.renamed": "#726293",
-        "terminal.version_control.ignored": "#808080",
+        "created": "#478f14",
+        "deleted": "#bd5151",
+        "modified": "#aa830e",
+        "conflict": "#726293",
+        "renamed": "#127d52",
+        "ignored": "#808080",
         "border": "#8393aa66",
-        "border.focus": "#94a3b8",
-        "warning.background": "#ffffff",
-        "warning.border": "#8393aa66",
+        "border.focused": "#94a3b8cc",
+        "border.selected": "#94a3b8",
+        "panel.background": "#fafaf9",
+        "link_text.hover": "#ffffff",
+        "scrollbar.thumb.background": "#85987c4d",
+        "scrollbar.thumb.hover_background": "#85987c99",
+        "hidden.background": "#ffffff",
+        "success": "#478f14",
+        "success.background": "#478f144d",
+        "info": "#0585a8",
+        "info.background": "#0585a84d",
+        "error": "#bd5151",
+        "error.background": "#bd51514d",
+        "warning": "#aa830e",
+        "warning.background": "#aa830e4d",
+        "unreachable": "#808080",
         "players": [
           {
             "cursor": "#6e7e95",
@@ -213,6 +270,9 @@
           "label": {
             "color": "#0585a8"
           },
+          "namespace": {
+            "color": "#a65973"
+          },
           "number": {
             "color": "#739900"
           },
@@ -230,6 +290,12 @@
           },
           "string": {
             "color": "#478f14"
+          },
+          "selector": {
+            "color": "#8d8949"
+          },
+          "selector.pseudo": {
+            "color": "#0585a8"
           },
           "tag": {
             "color": "#bd5151"
