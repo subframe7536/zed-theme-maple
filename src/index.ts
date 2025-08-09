@@ -31,7 +31,6 @@ function main(colorConfig: Record<string, Colors>) {
     description,
     repository: repo.url,
     authors: [author],
-    themes: ['maple.json'],
   }
   writeFileSync(
     'extension.toml',
