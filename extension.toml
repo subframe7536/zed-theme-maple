@@ -1,8 +1,7 @@
 id = "theme-maple"
 name = "Maple Theme"
-version = "0.1.2"
+version = "0.1.3"
 schema_version = 1
 description = "A colorful Zed theme, support light or dark mode, with medium brightness and low saturation."
 repository = "https://github.com/subframe7536/zed-theme-maple"
-authors = ["subframe7536"]
-themes = ["maple.json"]
+authors = ["subframe7536 <1667077010@qq.com>"]
