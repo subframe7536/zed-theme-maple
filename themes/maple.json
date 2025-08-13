@@ -97,8 +97,12 @@
             "color": "#f0c0a8"
           },
           "emphasis": {
-            "color": "#8fc7ff",
+            "color": "#f0c0a8",
             "font_style": "italic"
+          },
+          "emphasis.strong": {
+            "color": "#f0c0a8",
+            "font_weight": 700
           },
           "enum": {
             "color": "#a1e8e5"
@@ -114,6 +118,12 @@
             "font_style": "italic"
           },
           "label": {
+            "color": "#8fc7ff"
+          },
+          "link_text": {
+            "color": "#a4dfae"
+          },
+          "link_uri": {
             "color": "#8fc7ff"
           },
           "namespace": {
@@ -150,8 +160,14 @@
             "color": "#f0c0a8",
             "font_weight": 700
           },
+          "title": {
+            "color": "#d2ccff"
+          },
           "variable": {
             "color": "#eecfa0e6"
+          },
+          "variable.special": {
+            "color": "#e3cbeb"
           }
         }
       }
@@ -251,8 +267,12 @@
             "color": "#c37522"
           },
           "emphasis": {
-            "color": "#0585a8",
+            "color": "#c37522",
             "font_style": "italic"
+          },
+          "emphasis.strong": {
+            "color": "#c37522",
+            "font_weight": 700
           },
           "enum": {
             "color": "#127d52"
@@ -268,6 +288,12 @@
             "font_style": "italic"
           },
           "label": {
+            "color": "#0585a8"
+          },
+          "link_text": {
+            "color": "#478f14"
+          },
+          "link_uri": {
             "color": "#0585a8"
           },
           "namespace": {
@@ -304,8 +330,14 @@
             "color": "#c37522",
             "font_weight": 700
           },
+          "title": {
+            "color": "#726293"
+          },
           "variable": {
             "color": "#aa830ee6"
+          },
+          "variable.special": {
+            "color": "#a65973"
           }
         }
       }
