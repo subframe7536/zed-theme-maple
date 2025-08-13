@@ -144,8 +144,12 @@ export function buildTheme(
       constructor: token.class.normal,
       embedded: token.constant,
       emphasis: {
-        color: token.link,
-        fontStyle: 'italic',
+        color: token.markdown.italic,
+        fontStyle: 'italic'
+      },
+      'emphasis.strong': {
+        color: token.markdown.bold,
+        fontWeight: 700
       },
       enum: token.enum.normal,
       function: token.function,
@@ -155,6 +159,8 @@ export function buildTheme(
         fontStyle: 'italic',
       },
       label: token.function,
+      link_text: token.string,
+      link_uri: token.link,
       namespace: token.namespace,
       number: token.number,
       operator: token.operator,
@@ -169,7 +175,9 @@ export function buildTheme(
         color: token.type.normal,
         fontWeight: 700,
       },
+      title: token.markdown.title,
       variable: parseColor(token.variable.local, 0.9),
+      'variable.special': token.variable.defaultLib,
     }),
   };
 }
