@@ -1,5 +1,5 @@
 {
-  "name": "theme-maple",
+  "name": "maple-theme",
   "author": "subframe7536 <1667077010@qq.com>",
   "displayName": "Maple Theme",
   "type": "module",
@@ -27,9 +27,7 @@
     "@types/tinycolor2": "^1.4.6",
     "bumpp": "^10.2.2",
     "json-schema-to-typescript": "^15.0.4",
-    "tinycolor2": "^1.6.0"
-  },
-  "peerDependencies": {
-    "typescript": "~5.8"
+    "tinycolor2": "^1.6.0",
+    "typescript": "^5.9.2"
   }
 }
