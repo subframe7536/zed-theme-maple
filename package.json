@@ -17,8 +17,7 @@
   "scripts": {
     "build": "bun src/index.ts",
     "dev": "bun --hot src/index.ts",
-    "update": "bun run update.ts",
-    "postinstall": "bun run update",
+    "update": "bun run update.ts v0.2.0",
     "release": "bumpp --all -x 'bun run build'"
   },
   "devDependencies": {
