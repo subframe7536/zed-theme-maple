@@ -1,5 +1,12 @@
 import { colors, type Colors } from '../vscode/src/colors'
-import { name, author, description, displayName, repository as repo, version } from '../package.json'
+import {
+  name,
+  author,
+  description,
+  displayName,
+  repository as repo,
+  version,
+} from '../package.json'
 import { writeFileSync } from 'node:fs'
 import type { ThemeFamilyContent } from './type'
 import { buildTheme } from './theme'
@@ -18,10 +25,7 @@ function main(colorConfig: Record<string, Colors>) {
       style: buildTheme(baseColor, tokenColor, uiColor, isDark),
     })
   }
-  writeFileSync(
-    `themes/maple.json`,
-    `${JSON.stringify(themeJson, null, 2)}\n`,
-  )
+  writeFileSync(`themes/maple.json`, `${JSON.stringify(themeJson, null, 2)}\n`)
 
   const tomlConfig = {
     id: name,

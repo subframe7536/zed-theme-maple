@@ -1,18 +1,18 @@
-import { buildTerminalColor } from '../vscode/src/terminal';
-import type { BaseColor, TokenColor, UIColor } from '../vscode/src/type';
-import { parseColor, getSchemeTextColor } from '../vscode/src/util';
-import { buildUI, buildSyntax } from './utils';
+import { buildTerminalColor } from '../vscode/src/terminal'
+import type { BaseColor, TokenColor, UIColor } from '../vscode/src/type'
+import { parseColor, getSchemeTextColor } from '../vscode/src/util'
+import { buildUI, buildSyntax } from './utils'
 
 export function buildTheme(
   base: BaseColor,
   token: TokenColor,
   ui: UIColor,
-  isDark: boolean
+  isDark: boolean,
 ) {
   return {
     ...buildUI({
       background: {
-        DEFAULT: ui.background
+        DEFAULT: ui.background,
       },
       text: {
         DEFAULT: ui.foreground,
@@ -20,10 +20,10 @@ export function buildTheme(
         muted: parseColor(ui.foreground, 0.9),
       },
       hint: {
-        DEFAULT: ui.secondary
+        DEFAULT: ui.secondary,
       },
       elevated_surface: {
-        background: ui.background
+        background: ui.background,
       },
       editor: {
         foreground: ui.foreground,
@@ -57,34 +57,32 @@ export function buildTheme(
       ghost_element: {
         hover: parseColor(ui.listItem, 0.6),
         active: parseColor(ui.listItem, 0.8),
-        selected: ui.listItem
+        selected: ui.listItem,
       },
       terminal: {
         background: ui.backgroundEditor,
         foreground: ui.foreground,
-        ansi: buildTerminalColor(
-          base,
-          isDark,
-          (type, isBright) => isBright ? `bright_${type}` : type
+        ansi: buildTerminalColor(base, isDark, (type, isBright) =>
+          isBright ? `bright_${type}` : type,
         ),
       },
       created: {
         DEFAULT: token.diff.inserted,
       },
       deleted: {
-        DEFAULT: token.diff.deleted
+        DEFAULT: token.diff.deleted,
       },
       modified: {
-        DEFAULT: token.diff.changed
+        DEFAULT: token.diff.changed,
       },
       conflict: {
-        DEFAULT: base.purple
+        DEFAULT: base.purple,
       },
       renamed: {
-        DEFAULT: base.cyan
+        DEFAULT: base.cyan,
       },
       ignored: {
-        DEFAULT: base.gray
+        DEFAULT: base.gray,
       },
       border: {
         DEFAULT: ui.borderNormal,
@@ -95,16 +93,16 @@ export function buildTheme(
         background: ui.background,
       },
       link_text: {
-        hover: ui.backgroundEditorAlt
+        hover: ui.backgroundEditorAlt,
       },
       scrollbar: {
         thumb: {
           background: parseColor(ui.scrollbar, isDark ? 0.5 : 0.3),
           hover_background: parseColor(ui.scrollbar, isDark ? 0.8 : 0.6),
-        }
+        },
       },
       hidden: {
-        background: ui.backgroundEditorAlt
+        background: ui.backgroundEditorAlt,
       },
       success: {
         DEFAULT: base.green,
@@ -120,7 +118,7 @@ export function buildTheme(
       },
       warning: {
         DEFAULT: base.yellow,
-        background: parseColor(base.yellow, 0.3)
+        background: parseColor(base.yellow, 0.3),
       },
       unreachable: {
         DEFAULT: base.gray,
@@ -145,11 +143,11 @@ export function buildTheme(
       embedded: token.constant,
       emphasis: {
         color: token.markdown.italic,
-        fontStyle: 'italic'
+        fontStyle: 'italic',
       },
       'emphasis.strong': {
         color: token.markdown.bold,
-        fontWeight: 700
+        fontWeight: 700,
       },
       enum: token.enum.normal,
       function: token.function,
@@ -179,5 +177,5 @@ export function buildTheme(
       variable: parseColor(token.variable.local, 0.9),
       'variable.special': token.variable.defaultLib,
     }),
-  };
+  }
 }
