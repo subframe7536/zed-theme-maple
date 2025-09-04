@@ -32,7 +32,8 @@ export function buildTheme(
           background: ui.background,
         },
         document_highlight: {
-          bracket_background: parseColor(ui.cursor, isDark ? 0.5 : 0.3),
+          // highlight occurences of selection
+          bracket_background: parseColor(ui.selection, 0.4),
         },
         active_line: {
           background: parseColor(ui.selection, 0.25),
@@ -55,8 +56,8 @@ export function buildTheme(
         selected: ui.listItem,
       },
       ghost_element: {
-        hover: parseColor(ui.listItem, 0.6),
-        active: parseColor(ui.listItem, 0.8),
+        hover: parseColor(ui.listItem, 0.4),
+        active: parseColor(ui.listItem, 0.6),
         selected: ui.listItem,
       },
       terminal: {
@@ -122,6 +123,9 @@ export function buildTheme(
       },
       unreachable: {
         DEFAULT: base.gray,
+      },
+      search: {
+        match_background: ui.backgroundEditorAlt,
       },
       players: [
         {
