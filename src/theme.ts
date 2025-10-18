@@ -1,7 +1,7 @@
-import { buildTerminalColor } from '../vscode/src/terminal'
-import type { BaseColor, TokenColor, UIColor } from '../vscode/src/type'
-import { parseColor, getSchemeTextColor } from '../vscode/src/util'
-import { buildUI, buildSyntax } from './utils'
+import { buildTerminalColor } from "../vscode/src/terminal";
+import type { BaseColor, TokenColor, UIColor } from "../vscode/src/type";
+import { parseColor, getSchemeTextColor } from "../vscode/src/util";
+import { buildUI, buildSyntax } from "./utils";
 
 export function buildTheme(
   base: BaseColor,
@@ -20,7 +20,7 @@ export function buildTheme(
         muted: parseColor(ui.foreground, 0.9),
       },
       hint: {
-        DEFAULT: ui.secondary,
+        DEFAULT: base.gray,
       },
       elevated_surface: {
         background: ui.background,
@@ -139,7 +139,7 @@ export function buildTheme(
       attribute: token.property.normal,
       boolean: {
         color: token.boolean,
-        fontStyle: 'italic',
+        fontStyle: "italic",
       },
       comment: token.comment,
       constant: token.constant,
@@ -147,9 +147,9 @@ export function buildTheme(
       embedded: token.constant,
       emphasis: {
         color: token.markdown.italic,
-        fontStyle: 'italic',
+        fontStyle: "italic",
       },
-      'emphasis.strong': {
+      "emphasis.strong": {
         color: token.markdown.bold,
         fontWeight: 700,
       },
@@ -158,7 +158,7 @@ export function buildTheme(
       hint: token.comment,
       keyword: {
         color: token.keyword.normal,
-        fontStyle: 'italic',
+        fontStyle: "italic",
       },
       label: token.function,
       link_text: token.string,
@@ -171,7 +171,7 @@ export function buildTheme(
       punctuation: token.punctuation,
       string: token.string,
       selector: token.property.normal,
-      'selector.pseudo': token.css.pseudo,
+      "selector.pseudo": token.css.pseudo,
       tag: token.htmlTag,
       type: {
         color: token.type.normal,
@@ -179,7 +179,7 @@ export function buildTheme(
       },
       title: token.markdown.title,
       variable: parseColor(token.variable.local, 0.9),
-      'variable.special': token.variable.defaultLib,
+      "variable.special": token.variable.defaultLib,
     }),
-  }
+  };
 }
