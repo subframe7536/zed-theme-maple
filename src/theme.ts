@@ -94,6 +94,8 @@ export function buildTheme(
         background: ui.background,
       },
       link_text: {
+        // Cmd/Ctrl + click link text color
+        // INCLUDE `Go to Definition` links
         hover: token.string,
       },
       scrollbar: {
