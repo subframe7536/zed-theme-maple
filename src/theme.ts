@@ -121,6 +121,9 @@ export function buildTheme(
         DEFAULT: base.yellow,
         background: parseColor(base.yellow, 0.3),
       },
+      tab: {
+        active_background: parseColor(ui.listItem, 0.5),
+      },
       unreachable: {
         DEFAULT: base.gray,
       },
