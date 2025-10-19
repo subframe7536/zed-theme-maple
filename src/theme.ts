@@ -20,7 +20,7 @@ export function buildTheme(
         muted: parseColor(ui.foreground, 0.9),
       },
       hint: {
-        DEFAULT: base.gray,
+        DEFAULT: token.comment,
       },
       elevated_surface: {
         background: ui.background,
@@ -94,7 +94,7 @@ export function buildTheme(
         background: ui.background,
       },
       link_text: {
-        hover: ui.backgroundEditorAlt,
+        hover: token.string,
       },
       scrollbar: {
         thumb: {
