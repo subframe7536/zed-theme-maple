@@ -11,6 +11,7 @@
         "text.accent": "#8dbe74",
         "text.muted": "#cbd5e1e6",
         "hint": "#999999",
+        "hint.background": "#3b5b7de6",
         "elevated_surface.background": "#171718",
         "editor.foreground": "#cbd5e1",
         "editor.background": "#1e1e1f",
@@ -76,6 +77,41 @@
             "cursor": "#8d9db4",
             "background": "#1e1e1f",
             "selection": "#475569cc"
+          },
+          {
+            "cursor": "#d5f288",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#b8d7f9",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#e3cbeb",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#f0c0a8",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#edabab",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#64748b",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
+          },
+          {
+            "cursor": "#a1e8e5",
+            "background": "#1e1e1f",
+            "selection": "#475569cc"
           }
         ],
         "syntax": {
@@ -113,7 +149,7 @@
             "color": "#8fc7ff"
           },
           "hint": {
-            "color": "#999999"
+            "color": "#f5e7d6"
           },
           "keyword": {
             "color": "#d2ccff",
@@ -183,6 +219,7 @@
         "text.accent": "#85987c",
         "text.muted": "#475569e6",
         "hint": "#808080",
+        "hint.background": "#e2e8f0e6",
         "elevated_surface.background": "#fafaf9",
         "editor.foreground": "#475569",
         "editor.background": "#fffffe",
@@ -248,6 +285,41 @@
             "cursor": "#6e7e95",
             "background": "#fffffe",
             "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#739900",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#71a3a8",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#a65973",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#c37522",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#bd5151",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#94a3b8",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
+          },
+          {
+            "cursor": "#127d52",
+            "background": "#fffffe",
+            "selection": "#dee4d8"
           }
         ],
         "syntax": {
@@ -285,7 +357,7 @@
             "color": "#0585a8"
           },
           "hint": {
-            "color": "#808080"
+            "color": "#334155"
           },
           "keyword": {
             "color": "#726293",
