@@ -133,13 +133,22 @@ export function buildTheme(
       search: {
         match_background: ui.backgroundEditorAlt,
       },
+      // All cursors must be setup, because Zed may internally depends on them!
+      // Like the cursor when drag-and-drop the selection is using the 8th config 😅
       players: [
-        {
-          cursor: ui.cursor,
+          ui.cursor,
+          base.greenLight,
+          base.sky,
+          base.pink,
+          base.orange,
+          base.red,
+          ui.borderActive,
+          base.cyan,
+        ].map(c => ({
+          cursor: c,
           background: ui.backgroundEditor,
           selection: ui.selection,
-        },
-      ],
+        })),
     }),
     syntax: buildSyntax({
       attribute: token.property.normal,
