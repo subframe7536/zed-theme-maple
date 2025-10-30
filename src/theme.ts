@@ -20,7 +20,8 @@ export function buildTheme(
         muted: parseColor(ui.foreground, 0.9),
       },
       hint: {
-        DEFAULT: token.comment,
+        DEFAULT: token.comment, // Seems git blame only
+        background: parseColor(ui.inlineHintBackground, 0.9),
       },
       elevated_surface: {
         background: ui.background,
@@ -160,7 +161,7 @@ export function buildTheme(
       },
       enum: token.enum.normal,
       function: token.function,
-      hint: token.comment,
+      hint: ui.inlineHint, // Inlay hint color
       keyword: {
         color: token.keyword.normal,
         fontStyle: "italic",
