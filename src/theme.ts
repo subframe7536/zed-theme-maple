@@ -3,12 +3,7 @@ import type { BaseColor, TokenColor, UIColor } from "../vscode/src/type";
 import { parseColor, getSchemeTextColor } from "../vscode/src/util";
 import { buildUI, buildSyntax } from "./utils";
 
-export function buildTheme(
-  base: BaseColor,
-  token: TokenColor,
-  ui: UIColor,
-  isDark: boolean,
-) {
+export function buildTheme(base: BaseColor, token: TokenColor, ui: UIColor, isDark: boolean) {
   return {
     ...buildUI({
       background: {
@@ -136,19 +131,19 @@ export function buildTheme(
       // All cursors must be setup, because Zed may internally depends on them!
       // Like the cursor when drag-and-drop the selection is using the 8th config 😅
       players: [
-          ui.cursor,
-          base.greenLight,
-          base.sky,
-          base.pink,
-          base.orange,
-          base.red,
-          ui.borderActive,
-          base.cyan,
-        ].map(c => ({
-          cursor: c,
-          background: ui.backgroundEditor,
-          selection: ui.selection,
-        })),
+        ui.cursor,
+        base.greenLight,
+        base.sky,
+        base.pink,
+        base.orange,
+        base.red,
+        ui.borderActive,
+        base.cyan,
+      ].map((c) => ({
+        cursor: c,
+        background: ui.backgroundEditor,
+        selection: ui.selection,
+      })),
     }),
     syntax: buildSyntax({
       attribute: token.property.normal,
@@ -184,7 +179,11 @@ export function buildTheme(
       primary: token.builtin,
       property: token.property.normal,
       punctuation: token.punctuation,
+      "punctuation.bracket": token.punctuation,
+      "punctuation.list_marker": token.punctuation,
       string: token.string,
+      "string.escape": token.regex,
+      "string.regex": token.regex,
       selector: token.property.normal,
       "selector.pseudo": token.css.pseudo,
       tag: token.htmlTag,
@@ -195,6 +194,7 @@ export function buildTheme(
       title: token.markdown.title,
       variable: parseColor(token.variable.local, 0.9),
       "variable.special": token.variable.defaultLib,
+      variant: token.keyword.alt,
     }),
   };
 }
