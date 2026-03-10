@@ -182,7 +182,19 @@
           "punctuation": {
             "color": "#b8d7f9"
           },
+          "punctuation.bracket": {
+            "color": "#b8d7f9"
+          },
+          "punctuation.list_marker": {
+            "color": "#b8d7f9"
+          },
           "string": {
+            "color": "#a4dfae"
+          },
+          "string.escape": {
+            "color": "#a4dfae"
+          },
+          "string.regex": {
             "color": "#a4dfae"
           },
           "selector": {
@@ -205,6 +217,9 @@
             "color": "#eecfa0e6"
           },
           "variable.special": {
+            "color": "#e3cbeb"
+          },
+          "variant": {
             "color": "#e3cbeb"
           }
         }
@@ -390,7 +405,19 @@
           "punctuation": {
             "color": "#71a3a8"
           },
+          "punctuation.bracket": {
+            "color": "#71a3a8"
+          },
+          "punctuation.list_marker": {
+            "color": "#71a3a8"
+          },
           "string": {
+            "color": "#478f14"
+          },
+          "string.escape": {
+            "color": "#478f14"
+          },
+          "string.regex": {
             "color": "#478f14"
           },
           "selector": {
@@ -413,6 +440,9 @@
             "color": "#aa830ee6"
           },
           "variable.special": {
+            "color": "#a65973"
+          },
+          "variant": {
             "color": "#a65973"
           }
         }
